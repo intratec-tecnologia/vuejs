@@ -9,12 +9,16 @@
 		
 		<h1>{{ titulo }}</h1>
 
-		<div v-if="usuario.id == 1">
+<!-- 		<div v-if="usuario.id == 1">
 			Id: {{ usuario.id }} <br>
 			Nome: {{ usuario.nome}} <br>
 			Profissão: {{ usuario.profissao}} <br>
 		</div>
-		<div v-else>Nenhum usuário!</div>
+		<div v-else>Nenhum usuário!</div> -->
+
+		<ul>
+			<li v-for="(item, index) in linguagens">{{ index }} - {{ item.nome }}</li>
+		</ul>
 
 	</div>
 
@@ -29,7 +33,15 @@
 				id: 1,
 				nome: 'Jon Snow',
 				profissao: 'ator'
-			}
+			},
+			linguagens:[
+				{nome: 'PHP'},
+				{nome: 'JavaScript'},
+				{nome: 'C#'},
+				{nome: 'NodeJS'},
+				{nome: 'Jaca'},
+				{nome: 'Rails'}
+			]
 		}
 	});
 </script>
