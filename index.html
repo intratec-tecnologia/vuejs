@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>VueJS do jeito certo!</title>
+</head>
+<body>
+	<div id="app">
+		
+		<h1>{{ titulo }}</h1>
+
+		<div v-if="usuario.id == 1">
+			Id: {{ usuario.id }} <br>
+			Nome: {{ usuario.nome}} <br>
+			Profissão: {{ usuario.profissao}} <br>
+		</div>
+		<div v-else>Nenhum usuário!</div>
+
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script> 
+	var app = new Vue({
+		el: '#app',
+		data: {
+			titulo: 'VueJS do jeito certo',			
+			usuario:{
+				id: 1,
+				nome: 'Jon Snow',
+				profissao: 'ator'
+			}
+		}
+	});
+</script>
+</body>
+</html>
