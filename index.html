@@ -16,10 +16,48 @@
 		</div>
 		<div v-else>Nenhum usuário!</div> -->
 
-		<ul>
+<!-- 		<ul>
 			<li v-for="(item, index) in linguagens">{{ index }} - {{ item.nome }}</li>
-		</ul>
+		</ul> -->
 
+		<label for="nome">Nome</label><br>
+		<input type="text" v-model="nome">
+
+		<br><br>
+		<label for="telefone">telefone</label><br>
+		<input type="text" v-model="telefone">
+
+		<br><br>
+		<label for="novidades">Deseja receber nossas novidades?</label><br>
+		<input type="radio" value="sim" v-model="novidades">Sim 
+		<input type="radio" value="nao" v-model="novidades">Não
+
+		<br><br>
+		<label for="interesses">Interesses</label><br>
+		<input type="checkbox" value="futebol" v-model="interesses">Futebol <br>		
+		<input type="checkbox" value="formula1" v-model="interesses">Formula 1 <br>
+		<input type="checkbox" value="corrida" v-model="interesses">Corrida <br>
+
+		<br><br>
+		<label for="conheceu">Como nos conheceu?</label><br>
+		<select name="conheceu" v-model="conheceu" id="conheceu">
+			<option value="">Escolha</option>
+			<option value="tv">TV</option>
+			<option value="google">Google</option>
+			<option value="revista">Revista</option>
+		</select>
+		
+		<br><br>
+
+		<button>Enviar</button>
+
+		<hr>
+		Nome: {{ nome }} <br>
+		Telefone : {{ telefone}} <br>
+		Novidades: {{ novidades }} <br>
+		Interesse: {{ interesses }} <br>
+		Conheceu: {{ conheceu }} <br>
+		
 	</div>
 
 	<!-- development version, includes helpful console warnings -->
@@ -41,7 +79,12 @@
 				{nome: 'NodeJS'},
 				{nome: 'Jaca'},
 				{nome: 'Rails'}
-			]
+			], 
+			nome: '',
+			telefone: '',
+			novidades: '',
+			interesses: [],
+			conheceu: ''
 		}
 	});
 </script>
